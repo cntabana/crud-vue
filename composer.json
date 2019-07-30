@@ -1,7 +1,7 @@
 {
     "name": "cntabana/crud-vue",
-    "description": "A laravel frontend command to turn your Controllers code to Vue Views",
-    "version": "0.0.7",
+    "description": "Create CrudVue for Inertia",
+    "version": "0.0.1",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,8 +11,7 @@
         }
     ],
     "require": {
-        "laravel/framework": "^5.8",
-        "cntabana/crud-Vue":"0.1"
+        "laravel/framework": "^5.8"
     },
     "autoload": {
         "psr-4": {
