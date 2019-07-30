@@ -25,10 +25,27 @@
 </template>
 
 <script>
+import Icon from '@/Shared/Icon'
+import Layout from '@/Shared/Layout'
+import LoadingButton from '@/Shared/LoadingButton'
+import SelectInput from '@/Shared/SelectInput'
+import TextInput from '@/Shared/TextInput'
+import TrashedMessage from '@/Shared/TrashedMessage
+
 export default {
-  props: {
-    {{model}}: Object,
+  components: {
+    Icon,
+    Layout,
+    LoadingButton,
+    SelectInput,
+    TextInput,
+    TrashedMessage,
   },
+  props: {
+    organization: Object,
+  },
+  remember: 'form',
+  
   data() {
     return {
       sending: false,
