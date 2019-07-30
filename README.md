@@ -16,4 +16,5 @@ inertia-vue
     --path= : Specify the js path of pages (Default: resources/js/Pages)
     --stub= : Specify the stub path (Default: package stub directory)
     --data= : Whether or not the model data is accessesed through the `data` attribute (Default: false)
-```
+```"# crud-vue"  git init git add README.md git commit -m "first commit" git remote add origin https://github.com/cntabana/crud-vue.git git push -u origin master
+"# crud-vue" 
