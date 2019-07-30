@@ -1,6 +1,6 @@
 <?php
 
-namespace InertiaVue;
+namespace CrudVue;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
@@ -8,9 +8,9 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\Finder\SplFileInfo;
 
-class InertiaVueCommand extends Command
+class CrudVueCommand extends Command
 {
-    protected $signature = 'inertia-vue
+    protected $signature = 'crud-vue
                             {--model= : Specify the Model to convert to Vue}
                             {--path= : Specify the js path of pages}
                             {--stub= : Specify the stub path}

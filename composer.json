@@ -1,28 +1,28 @@
 {
-    "name": "juhlinus/inertia-vue",
+    "name": "cntabana/crud-vue",
     "description": "A laravel frontend command to turn your Controllers code to Vue Views",
     "version": "0.0.7",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Linus Juhlin",
-            "email": "juhlinus@gmail.com"
+            "name": "Ruddy Ntabana",
+            "email": "ntabanacoco@gmail.com"
         }
     ],
     "require": {
         "laravel/framework": "^5.8",
-        "cntabana/Inertie-Vue":"dev-master"
+        "cntabana/crud-Vue":"0.1"
     },
     "autoload": {
         "psr-4": {
-            "InertiaVue\\": "src/"
+            "CrudVue\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "InertiaVue\\InertiaVueServiceProvider"
+                "CrudVue\\CrudVueServiceProvider"
             ]
         }
     }

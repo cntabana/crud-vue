@@ -1,16 +1,16 @@
 <?php
 
-namespace InertiaVue;
+namespace CrudVue;
 
 use Illuminate\Support\ServiceProvider;
 
-class InertiaVueServiceProvider extends ServiceProvider
+class CrudVueServiceProvider extends ServiceProvider
 {
     public function boot()
     {
     	if ($this->app->runningInConsole()) {
 	        $this->commands([
-	            InertiaVueCommand::class,
+	            CrudVueCommand::class,
 	        ]);
 	    }
     }
@@ -18,7 +18,7 @@ class InertiaVueServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            InertiaVueCommand::class,
+            CrudVueCommand::class,
         ];
     }
 }
