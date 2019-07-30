@@ -1,5 +1,5 @@
 {
-    "name": "juhlinus/inertia-vue",
+    "name": "cntabana/inertia-vue",
     "description": "A laravel frontend command to turn your Controllers code to Vue Views",
     "version": "0.0.7",
     "type": "library",
