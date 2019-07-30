@@ -1,17 +1,18 @@
 {
-    "name": "cntabana/inertia-vue",
+    "name": "juhlinus/inertia-vue",
     "description": "A laravel frontend command to turn your Controllers code to Vue Views",
     "version": "0.0.7",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Ruddy Ntabana",
-            "email": "ntabanacoco@gmail.com"
+            "name": "Linus Juhlin",
+            "email": "juhlinus@gmail.com"
         }
     ],
     "require": {
-        "laravel/framework": "^5.8"
+        "laravel/framework": "^5.8",
+        "cntabana/Inertie-Vue":"dev-master"
     },
     "autoload": {
         "psr-4": {
