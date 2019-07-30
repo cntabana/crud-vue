@@ -1,7 +1,5 @@
 <template>
  <layout title="Create {{Model}}">
-  <div title="Create {{Model}}">
-
     <h1 class="mb-8 font-bold text-3xl">
       <inertia-link class="text-indigo-light hover:text-indigo-dark" :href="route('{{models}}.index')">{{Models}}</inertia-link>
       <span class="text-indigo-light font-medium">/</span> Create
@@ -19,7 +17,7 @@
 
       </form>
     </div>
-  </div>
+
   </layout>
 </template>
 
@@ -27,7 +25,7 @@
 import Layout from '@/Shared/Layout'
 import LoadingButton from '@/Shared/LoadingButton'
 import SelectInput from '@/Shared/SelectInput'
-import TextInput from '@/Shared/TextInput
+import TextInput from '@/Shared/TextInput'
 
 export default {
 
@@ -37,7 +35,7 @@ export default {
     SelectInput,
     TextInput,
   },
-  remember: 'form'
+  remember: 'form',
   data() {
     return {
       sending: false,
