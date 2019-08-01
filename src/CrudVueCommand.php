@@ -117,7 +117,7 @@ class CrudVueCommand extends Command
                 {{ {{model}}.' . $item[1] . ' }}
             </td>',
                 '{{input-fields}}' => '
-            <input v-model="form.' . $item[1] . '" :errors="$page.errors.' . $item[1] . '" class="pr-6 pb-8 w-full lg:w-1/2" label="'.$item[1].'"/>',
+            <text-input v-model="form.' . $item[1] . '" :errors="$page.errors.' . $item[1] . '" class="pr-6 pb-8 w-full lg:w-1/2" label="'.$item[1].'"/>',
                 '{{data-form-input}}' => $item[1] . ': this.{{model}}.' . $item[1] . ',',
                 '{{data-form-input-null}}' => $item[1] . ': null,',
             ];
