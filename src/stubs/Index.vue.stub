@@ -35,14 +35,15 @@
   </layout>
 </template>
 
+
 <script>
-export default {
-  import _ from 'lodash'
+import _ from 'lodash'
   import Icon from '@/Shared/Icon'
   import Layout from '@/Shared/Layout'
   import Pagination from '@/Shared/Pagination'
   import SearchFilter from '@/Shared/SearchFilter'
-
+  
+export default {
   components: {
     Icon,
     Layout,
@@ -53,7 +54,7 @@ export default {
     {{models}}: Object,
     filters: Object,
   },
-  
+
   data() {
     return {
       form: {
