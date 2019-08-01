@@ -1,23 +1,21 @@
 <template>
-<layout :title="form.name">
+  <layout :title="`${form.first_name} ${form.last_name}`">
     <h1 class="mb-8 font-bold text-3xl">
-      <inertia-link class="text-indigo-light hover:text-indigo-dark" :href="route('organizations')">Organizations</inertia-link>
+      <inertia-link class="text-indigo-light hover:text-indigo-dark" :href="route('{{models}}.index')">{{Models}}</inertia-link>
       <span class="text-indigo-light font-medium">/</span>
-      {{ form.name }}
+      Title
     </h1>
-    <trashed-message v-if="organization.deleted_at" class="mb-6" @restore="restore">
-      This organization has been deleted.
+    <trashed-message v-if="{{model}}.deleted_at" class="mb-6" @restore="restore">
+      This {{model}} has been deleted.
     </trashed-message>
     <div class="bg-white rounded shadow overflow-hidden max-w-lg">
-
       <form @submit.prevent="submit">
         <div class="p-8 -mr-6 -mb-8 flex flex-wrap">
-
           {{input-fields}}
         </div>
         <div class="px-8 py-4 bg-grey-lightest border-t border-grey-lighter flex items-center">
-          <button v-if="!organization.deleted_at" class="text-red hover:underline" tabindex="-1" type="button" @click="destroy">Delete Organization</button>
-          <loading-button :loading="sending" class="btn-indigo ml-auto" type="submit">Update Organization</loading-button>
+          <button v-if="!{{model}}.deleted_at" class="text-red hover:underline" tabindex="-1" type="button" @click="destroy">Delete {{Model}}</button>
+          <loading-button :loading="sending" class="btn-indigo ml-auto" type="submit">Update {{Model}}</loading-button>
         </div>
       </form>
     </div>
@@ -25,7 +23,6 @@
 </template>
 
 <script>
-import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
 import LoadingButton from '@/Shared/LoadingButton'
 import SelectInput from '@/Shared/SelectInput'
@@ -34,7 +31,6 @@ import TrashedMessage from '@/Shared/TrashedMessage'
 
 export default {
   components: {
-    Icon,
     Layout,
     LoadingButton,
     SelectInput,
@@ -42,10 +38,10 @@ export default {
     TrashedMessage,
   },
   props: {
-    organization: Object,
+    {{model}}: Object,
+    {{models}}: Array,
   },
   remember: 'form',
-
   data() {
     return {
       sending: false,
@@ -69,9 +65,6 @@ export default {
       if (confirm('Are you sure you want to restore this {{model}}?')) {
         this.$inertia.put(this.route('{{models}}.restore', this.{{model}}.id))
       }
-    },
-    view() {
-      this.$inertia.replace(this.route('{{models}}.show', this.{{model}}.id))
     },
   },
 }

@@ -18,15 +18,12 @@
     <div class="bg-white rounded shadow overflow-x-auto">
       <table class="w-full whitespace-no-wrap">
         <tr class="text-left font-bold">
-        <tr>
-        {{fields-head}}
+          {{fields-head}}
         </tr>
-
-        <tr v-for="{{model}} in {{models}}{{data-attribute}}" :key="{{model}}.{{primaryKey}}" class="hover:bg-grey-lightest focus-within:bg-grey-lightest">
+        <tr v-for="{{model}} in {{models}}.data" :key="{{model}}.{{primaryKey}}" class="hover:bg-grey-lightest focus-within:bg-grey-lightest">
           {{fields-data}}
         </tr>
-    
-        <tr v-if="{{models}}{{data-attribute}}.length === 0">
+        <tr v-if="{{models}}.data.length === 0">
           <td class="border-t px-6 py-4" colspan="4">No {{models}} found.</td>
         </tr>
       </table>
@@ -35,14 +32,13 @@
   </layout>
 </template>
 
-
 <script>
 import _ from 'lodash'
-  import Icon from '@/Shared/Icon'
-  import Layout from '@/Shared/Layout'
-  import Pagination from '@/Shared/Pagination'
-  import SearchFilter from '@/Shared/SearchFilter'
-  
+import Icon from '@/Shared/Icon'
+import Layout from '@/Shared/Layout'
+import Pagination from '@/Shared/Pagination'
+import SearchFilter from '@/Shared/SearchFilter'
+
 export default {
   components: {
     Icon,
@@ -54,7 +50,6 @@ export default {
     {{models}}: Object,
     filters: Object,
   },
-
   data() {
     return {
       form: {

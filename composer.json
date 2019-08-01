@@ -1,7 +1,7 @@
 {
     "name": "cntabana/crud-vue",
     "description": "Create CrudVue for Inertia",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "type": "library",
     "license": "MIT",
     "authors": [
