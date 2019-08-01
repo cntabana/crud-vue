@@ -22,12 +22,6 @@
         </tr>
         <tr v-for="{{model}} in {{models}}.data" :key="{{model}}.{{primaryKey}}" class="hover:bg-grey-lightest focus-within:bg-grey-lightest">
           {{fields-data}}
-          <td class="border-t w-px">
-            <inertia-link class="px-4 flex items-center" :href="route('{{models}}.edit', organization.id)" tabindex="-1">
-              <icon name="cheveron-right" class="block w-6 h-6 fill-grey" />
-            </inertia-link>
-          </td>
-
         </tr>
         <tr v-if="{{models}}.data.length === 0">
           <td class="border-t px-6 py-4" colspan="4">No {{models}} found.</td>
@@ -57,7 +51,7 @@ export default {
     {{models}}: Object,
     filters: Object,
   },
-
+  
   data() {
     return {
       form: {
