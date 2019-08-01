@@ -55,18 +55,12 @@ class CrudVueCommand extends Command
             $buildFields = $this->buildFields($fields);
 
             [$indexVueFile, $editVueFile, $createVueFile, $showVueFile] = $this->replaceWithData([
-                '{{fields-head}}' => $buildFields->pluck('{{fields-head}}')->join('
-                '),
-                '{{fields-data}}' => $buildFields->pluck('{{fields-data}}')->join('
-                '),
-                '{{fields-show-data}}' => $buildFields->pluck('{{fields-show-data}}')->join('
-                '),
-                '{{input-fields}}' => $buildFields->pluck('{{input-fields}}')->join('
-              '),
-                '{{data-form-input}}' => $buildFields->pluck('{{data-form-input}}')->join('
-            '),
-                '{{data-form-input-null}}' => $buildFields->pluck('{{data-form-input-null}}')->join('
-            '),
+                '{{fields-head}}' => $buildFields->pluck('{{fields-head}}')->join(''),
+                '{{fields-data}}' => $buildFields->pluck('{{fields-data}}')->join(''),
+                '{{fields-show-data}}' => $buildFields->pluck('{{fields-show-data}}')->join(''),
+                '{{input-fields}}' => $buildFields->pluck('{{input-fields}}')->join(''),
+                '{{data-form-input}}' => $buildFields->pluck('{{data-form-input}}')->join(''),
+                '{{data-form-input-null}}' => $buildFields->pluck('{{data-form-input-null}}')->join(''),
                 '{{data-attribute}}' => empty($this->option('data')) ? '' : '.data',
             ], [
                 File::get($stub . '/Index.vue.stub'),
