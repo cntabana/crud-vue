@@ -105,7 +105,7 @@ class CrudVueCommand extends Command
     {
         return $fields->map(function ($item) {
             return [
-                '{{fields-head}}' => '<th>' . ucfirst($item[1]) . '</th>',
+                '{{fields-head}}' => '<th class="px-6 pt-6 pb-4">' . ucfirst($item[1]) . '</th>',
                 '{{fields-data}}' => '
             <td class="border-t">
               <inertia-link class="px-6 py-4 flex items-center" :href="route(\'{{models}}.edit\', {{model}}.id)" tabindex="-1">
