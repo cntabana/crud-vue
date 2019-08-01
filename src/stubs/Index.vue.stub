@@ -46,10 +46,12 @@ export default {
     Pagination,
     SearchFilter,
   },
+
   props: {
     {{models}}: Object,
     filters: Object,
   },
+  
   data() {
     return {
       form: {
