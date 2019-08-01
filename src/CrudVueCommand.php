@@ -107,17 +107,17 @@ class CrudVueCommand extends Command
             return [
                 '{{fields-head}}' => '<th>' . ucfirst($item[1]) . '</th>',
                 '{{fields-data}}' => '
-            <td>
-              <inertia-link :href="route(\'{{models}}.edit\', {{model}}.id)" tabindex="-1">
+            <td class="border-t">
+              <inertia-link class="px-6 py-4 flex items-center" :href="route(\'{{models}}.edit\', {{model}}.id)" tabindex="-1">
                 {{ {{model}}.' . $item[1] . ' }}
               </inertia-link>
             </td>',
                 '{{fields-show-data}}' => '
-            <td>
+            <td class="border-t">
                 {{ {{model}}.' . $item[1] . ' }}
             </td>',
-                '{{input-fields}}' => '<label>' . ucfirst($item[1]) . '</label>
-            <input v-model="form.' . $item[1] . '" :errors="$page.errors.' . $item[1] . '" />',
+                '{{input-fields}}' => '
+            <input v-model="form.' . $item[1] . '" :errors="$page.errors.' . $item[1] . '" class="pr-6 pb-8 w-full lg:w-1/2" label="'.$item[1].'"/>',
                 '{{data-form-input}}' => $item[1] . ': this.{{model}}.' . $item[1] . ',',
                 '{{data-form-input-null}}' => $item[1] . ': null,',
             ];

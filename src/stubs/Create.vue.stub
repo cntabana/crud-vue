@@ -1,7 +1,7 @@
 <template>
  <layout title="Create {{Model}}">
     <h1 class="mb-8 font-bold text-3xl">
-      <inertia-link class="text-indigo-light hover:text-indigo-dark" :href="route('{{models}}.index')">{{Models}}</inertia-link>
+      <inertia-link class="text-indigo-light hover:text-indigo-dark" :href="route('{{models}}')">{{Models}}</inertia-link>
       <span class="text-indigo-light font-medium">/</span> Create
     </h1>
 
