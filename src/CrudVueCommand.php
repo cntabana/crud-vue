@@ -120,7 +120,7 @@ class CrudVueCommand extends Command
                 '{{fields-view-data}}' => '
             <div class="table-row hover:bg-grey-lightest focus-within:bg-grey-lightest">
                 <div class="px-6 py-2 table-cell text-right border-r"><b>'. ucfirst($item[1]).'</b></div>
-                <div class="table-cell px-2 border-r">{{ {{model}}.' . $item[1] . ' }}</div>
+                <div class="table-cell px-2">{{ {{model}}.' . $item[1] . ' }}</div>
             </div>',
                 '{{input-fields}}' => '
                 <text-input v-model="form.' . $item[1] . '" :errors="$page.errors.' . $item[1] . '" class="pr-6 pb-8 w-full lg:w-1/2" label="'.$item[1].'"/>',
