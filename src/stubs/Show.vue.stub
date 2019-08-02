@@ -1,26 +1,49 @@
 <template>
-  <div title="{{Models}} Show">
-    <h1>
-      <inertia-link :href="route('{{models}}.index')">{{Models}}</inertia-link>
+    <layout title="{{Models}}">
+    <h1 class="mb-8 font-bold text-3xl"> 
+      <inertia-link :href="route('{{models}}')">{{Models}}</inertia-link>
       <span>/</span> Show
     </h1>
-    <div>
-      <table>
-        <tr>
-          {{fields-head}}
-        </tr>
-        <tr>
-          {{fields-show-data}}
-        </tr>
-      </table>
+    
+    <div class="bg-white rounded shadow overflow-x-auto w-full">
+        {{fields-view-data}}
     </div>
-  </div>
+  </layout>
 </template>
 
 <script>
+import Icon from '@/Shared/Icon'
+import Layout from '@/Shared/Layout'
+import LoadingButton from '@/Shared/LoadingButton'
 export default {
+  components: {
+    Icon,
+    Layout,
+    LoadingButton
+  },
   props: {
     {{model}}: Object,
-  }
+  },
+  remember: 'form',
+  data() {
+    return {
+      sending: false,
+      form: {
+        {{data-form-input}}
+      }
+    }
+  },
+  methods: {
+    submit() {
+      this.sending = true
+      this.$inertia.put(this.route('{{model}}.update', this.{{model}}.id), this.form)
+        .then(() => this.sending = false)
+    },
+    destroy() {
+      if (confirm('Are you sure you want to delete this {{model}}?')) {
+        this.$inertia.delete(this.route('{{models}}.destroy', this.{{model}}.id))
+      }
+    },
+  },
 }
 </script>

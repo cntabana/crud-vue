@@ -56,12 +56,13 @@ class CrudVueCommand extends Command
 
             [$indexVueFile, $editVueFile, $createVueFile, $showVueFile] = $this->replaceWithData([
                 '{{fields-head}}' => $buildFields->pluck('{{fields-head}}')->join(''),
+                '{{fields-view-data}}' => $buildFields->pluck('{{fields-view-data}}')->join(''),
                 '{{fields-data}}' => $buildFields->pluck('{{fields-data}}')->join(''),
                 '{{fields-show-data}}' => $buildFields->pluck('{{fields-show-data}}')->join(''),
                 '{{input-fields}}' => $buildFields->pluck('{{input-fields}}')->join(''),
                 '{{data-form-input}}' => $buildFields->pluck('{{data-form-input}}')->join(''),
                 '{{data-form-input-null}}' => $buildFields->pluck('{{data-form-input-null}}')->join(''),
-                '{{data-attribute}}' => empty($this->option('data')) ? '' : '.data',
+                '{{data-attribute}}' => empty($this->option('data')) ? '' : '.data'
             ], [
                 File::get($stub . '/Index.vue.stub'),
                 File::get($stub . '/Edit.vue.stub'),
@@ -108,18 +109,23 @@ class CrudVueCommand extends Command
                 '{{fields-head}}' => '<th class="px-6 pt-6 pb-4">' . ucfirst($item[1]) . '</th>',
                 '{{fields-data}}' => '
             <td class="border-t">
-              <inertia-link class="px-6 py-4 flex items-center" :href="route(\'{{models}}.edit\', {{model}}.id)" tabindex="-1">
+              <span class="px-4 py-2 flex items-center" tabindex="-1">
                 {{ {{model}}.' . $item[1] . ' }}
-              </inertia-link>
+              </span>
             </td>',
                 '{{fields-show-data}}' => '
             <td class="border-t">
                 {{ {{model}}.' . $item[1] . ' }}
             </td>',
+                '{{fields-view-data}}' => '
+            <div class="table-row hover:bg-grey-lightest focus-within:bg-grey-lightest">
+                <div class="px-6 py-2 table-cell text-right border-r"><b>'. ucfirst($item[1]).'</b></div>
+                <div class="table-cell px-2 border-r">{{ {{model}}.' . $item[1] . ' }}</div>
+            </div>',
                 '{{input-fields}}' => '
                 <text-input v-model="form.' . $item[1] . '" :errors="$page.errors.' . $item[1] . '" class="pr-6 pb-8 w-full lg:w-1/2" label="'.$item[1].'"/>',
                 '{{data-form-input}}' => $item[1] . ': this.{{model}}.' . $item[1] . ',',
-                '{{data-form-input-null}}' => $item[1] . ': null,',
+                '{{data-form-input-null}}' => $item[1] . ': null,'
             ];
         });
     }
@@ -152,8 +158,10 @@ class CrudVueCommand extends Command
             Str::singular(
                 Str::after(
                     Str::before(
-                        $migration, '_table'
-                    ), '_create_'
+                        $migration,
+                        '_table'
+                    ),
+                    '_create_'
                 )
             )
         );
