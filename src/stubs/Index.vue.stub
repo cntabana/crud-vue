@@ -24,15 +24,15 @@
           {{fields-data}}
             
           <td class="border-t w-px">
-            <inertia-link class="px-1 flex items-center" :href="route('{{models}}.show', {{model}}.id)" tabindex="-1">
-              <icon name="eye" class="block w-4 h-4 fill-blue" />
-            </inertia-link>
-          </td>
-          <td class="border-t w-px">
             <inertia-link class="px-1 flex items-center" :href="route('{{models}}.edit', {{model}}.id)" tabindex="-1">
               <icon name="edit" class="block w-4 h-4 fill-green" />
             </inertia-link>
           </td>          
+          <td class="border-t w-px">
+            <inertia-link class="px-1 flex items-center" :href="route('{{models}}.show', {{model}}.id)" tabindex="-1">
+              <icon name="cheveron-right" class="block w-4 h-4 fill-blue" />
+            </inertia-link>
+          </td>
         </tr>
         <tr v-if="{{models}}.data.length === 0">
           <td class="border-t px-6 py-4" colspan="4">No {{models}} found.</td>
