@@ -28,9 +28,9 @@ import SelectInput from '@/Shared/SelectInput'
 import TextInput from '@/Shared/TextInput'
 
 export default {
-
+  metaInfo: { title: '{{models}}' },
+  layout: Layout,
  components: {
-    Layout,
     LoadingButton,
     SelectInput,
     TextInput,

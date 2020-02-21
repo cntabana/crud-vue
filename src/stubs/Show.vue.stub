@@ -16,9 +16,10 @@ import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
 import LoadingButton from '@/Shared/LoadingButton'
 export default {
+  metaInfo: { title: '{{models}}' },
+  layout: Layout,
   components: {
     Icon,
-    Layout,
     LoadingButton
   },
   props: {
