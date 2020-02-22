@@ -6,7 +6,7 @@
 
 Require the package via composer
 
-`composer require juhlinus/inertia-vue`
+`composer require cntabana/crud-vue`
 
 ## <p align="center">Usage</p>
 
